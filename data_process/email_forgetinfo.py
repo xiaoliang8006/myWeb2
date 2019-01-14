@@ -21,7 +21,7 @@ def mail():
         server=smtplib.SMTP("smtp.qq.com",587)  #发件人邮箱中的SMTP服务器，端口是587
         server.ehlo()
         server.starttls()
-        server.login(my_sender,"xpvaplxrgizlhied")    #括号中对应的是发件人邮箱账号、邮箱密码
+        server.login(my_sender,"密码")    #括号中对应的是发件人邮箱账号、邮箱密码
         server.sendmail(my_sender,[my_user,],msg.as_string())   #括号中对应的是发件人邮箱账号、收件人邮箱账号、发送邮件
         server.quit()   #这句是关闭连接的意思
     except Exception:   #如果try中的语句没有执行，则会执行下面的ret=False
