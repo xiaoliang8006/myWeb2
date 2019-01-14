@@ -19,9 +19,9 @@ function closeConnect($x) {
 //第二种连接方式
 function getConnect2() {
 	$dbms = "mysql";   // 数据库的类型
-	$dbName ="TEST";   //使用的数据库名称
+	$dbName ="yourdb";   //使用的数据库名称
 	$user = "root";    //使用的数据库用户名
-	$pwd = "7655289lfh";  //使用的数据库密码
+	$pwd = "yourpasswd";  //使用的数据库密码
 	$host = "localhost";  //使用的主机名称
 	$dsn  = "$dbms:host=$host;dbname=$dbName";	
 	$link=new PDO($dsn,$user,$pwd);//初始化一个PDO对象，就是创建了数据库连接对象$pdo
