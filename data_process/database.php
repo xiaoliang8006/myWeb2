@@ -3,9 +3,9 @@
 //第一种连接方式
 function getConnect() {
 	$host = "localhost"; 
-	$database = "TEST"; 
+	$database = "yourdb"; 
 	$userName = "root"; 
-	$passWord = "7655289lfh";  
+	$passWord = "yourpasswd";  
 	$link = mysql_connect($host, $userName, $passWord); 
 	mysql_select_db($database,$link); 
 	mysql_query("set names gbk"); 
