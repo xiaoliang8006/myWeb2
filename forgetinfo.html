@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>找回账户</title>
+    <link rel="stylesheet" type="text/css" href="./css/login.css"/>
+</head>
+ 
+<body>
+<div id="login_frame" >
+	<br><br><br>
+	<p><input type="text" id="registerEmail" style="width:300px" class="text_field" placeholder="填写注册邮箱"/>
+		<div id="login_control">
+			<input type="submit" id="btn_login" onclick="settime(this)" style="cursor: pointer" value="获取验证码"/>
+		</div>
+	</p>		
+	<form action="data_process/forgetinfo.php" method="post">	
+	<p>
+		<input type="text" name="authCode" class="text_field" style="width:300px" placeholder="填写验证码"/>
+		<div id="login_control">
+			<input type="submit" id="btn_login" style="cursor: pointer" value="验证"/>
+		</div>
+	</p>
+	</form>
+	<a href='login.html'>去登录</a>
+</div>
+
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script type="text/javascript">
+    var countdown=60;
+	flag=true;
+    function settime(val) {
+        if (countdown == 0) {
+            val.removeAttribute("disabled");
+            val.value="获取验证码";
+            countdown = 60;
+			flag=true;
+        } else {
+            val.setAttribute("disabled", true);
+            val.value="重新发送(" + countdown + ")";
+            countdown--;
+			if(flag){
+				var ue=document.getElementById('registerEmail').value;
+				$.post("data_process/forgetinfo.php",{userEmail:ue},function(){});
+			}
+			flag=false;
+            setTimeout(function() {
+                settime(val)
+            },1000)
+        }
+    }
+</script>
+</body>
+</html>

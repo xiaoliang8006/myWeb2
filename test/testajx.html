@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>testajx</title>
+</head>
+<body>
+   <p>input:name:"john",pwd:"123"</p>
+	<p><input type="button" id="btn" value="返回值"></p>
+	<p>output:<span id="result"></span></p>
+	
+	<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+	<script type="text/javascript">
+        $('#btn').click(function(){
+			$.post("testajx.php",{name:123,pwd:123},
+				function(data){
+					$('#result').text(data);
+				});
+		});
+	</script>
+</body>
+</html>

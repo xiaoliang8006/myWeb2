@@ -1,0 +1,19 @@
+<?php 
+			if($result[$i]['userName']!='system' && $result[$i]['userName']!='admin'){
+				echo "<input type=\"submit\" onclick=\"change2(a$i)\" id=\"a$i\" ";
+				echo "value='使用中'/>";
+			}else{
+				echo "--";
+			}
+			?> 
+			
+					function change2(aid){
+			aid=String(aid);
+			var del=document.getElementById(aid);
+			del.value="已删除";
+			aid=aid.substr(1);
+			$.post("alter.php",{idval:aid,flag:2},function(){});
+		};
+			
+			
+			

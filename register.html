@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册页面</title>
+    <link rel="stylesheet" type="text/css" href="./css/login.css"/>
+</head>
+ 
+<body>
+<div id="login_frame">
+	<form action="./data_process/register.php" method="POST" enctype="multipart/form-data"> 
+		<br>
+		<p><label class="label_input">用户名</label><input type="text" name="userName" class="text_field" placeholder="必须填写用户名"/></p>
+        <p><label class="label_input">登录密码</label><input type="password" name="password" class="text_field" placeholder="必须填写密码"/></p>
+		<p><label class="label_input">确认密码</label><input type="password" name="confirmPassword" class="text_field" placeholder="确认密码"/></p>
+		<p><label class="label_input" style="margin-left:-130px">性别</label>
+		&nbsp;&nbsp;&nbsp;<input name="sex" type="radio" id="male" value="male" />男 
+		&nbsp;&nbsp;&nbsp;<input name="sex" type="radio" id="female" value="female"/>女
+		</p>
+		<p><label class="label_input">邮箱</label><input type="text" name="userEmail" class="text_field" placeholder="填写邮箱"/></p>
+		<div id="login_control">
+            <input type="submit" id="btn_login" value="注册" style="cursor: pointer"/>
+        </div>
+		<br><a href='login.html'>去登录</a>
+	</form>
+</div>
+ 
+</body>
+</html>
